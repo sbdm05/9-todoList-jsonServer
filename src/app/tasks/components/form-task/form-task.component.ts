@@ -27,5 +27,6 @@ export class FormTaskComponent {
 
   onSubmit() {
     console.log(this.form.value);
+    this.submitted.emit(this.form.value)
   }
 }

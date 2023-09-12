@@ -2,23 +2,13 @@
   "tasks": [
     {
       "titre": "Todo 1",
-      "status": "EN COURS",
+      "status": "TERMINE",
       "id": 1
     },
     {
       "titre": "Todo 2",
-      "status": "EN COURS",
+      "status": "TERMINE",
       "id": 2
-    },
-    {
-      "titre": "fdsfd",
-      "status": "EN COURS",
-      "id": 3
-    },
-    {
-      "titre": "fds",
-      "status": "EN COURS",
-      "id": 4
     }
   ]
 }

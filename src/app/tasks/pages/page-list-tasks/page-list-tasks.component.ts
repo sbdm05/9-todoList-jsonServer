@@ -13,17 +13,23 @@ export class PageListTasksComponent {
   public datas!: Task[];
 
   constructor(private tasksService: TasksService, private router: Router) {
-    this.tasksService.getTasks().subscribe((data) => {
+    // this.tasksService.getTasks().subscribe((data) => {
+    //   console.log(data);
+    //   this.datas = data;
+    // });
+    this.tasksService.refreshCollection()
+    this.tasksService.collection$.subscribe(data=>{
       console.log(data);
-      this.datas = data;
-    });
+      this.datas = data
+
+    })
   }
 
   onAdd(task: Task) {
     this.tasksService.postTasks(task).subscribe((data) => {
       console.log(data);
       // this.datas.unshift(data);
-      this.datas = [...this.datas, data];
+      //this.datas = [...this.datas, data];
     });
   }
 
