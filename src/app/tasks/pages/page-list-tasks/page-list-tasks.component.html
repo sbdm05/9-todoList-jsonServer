@@ -1,0 +1,15 @@
+<app-form-task (submitted)='onAdd($event)'></app-form-task>
+
+
+<div class="list-group">
+  <label class="list-group-item" *ngFor="let i of datas; index as ind">
+    <div>
+      <input class="form-check-input me-1" type="checkbox" [checked]="i.status == 'TERMINE'" (change)="onTicked(i)">
+      {{i.titre}}
+    </div>
+    <button class="btn btn-danger" (click)='goToEdit(i)'>Edit</button>
+  </label>
+</div>
+
+
+<div *ngIf='datas?.length === 0'> No Todo !</div>

@@ -1,0 +1,23 @@
+#validation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: grey;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  position: absolute;
+  /* Position the modal content within the modal container */
+  top: 50%;
+  /* Center vertically */
+  left: 50%;
+  /* Center horizontally */
+  transform: translate(-50%, -50%);
+  /* Centering trick */
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
