@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { BehaviorSubject, Observable, Subscriber, Subscription, tap } from 'rxjs';
 import { Task } from 'src/app/core/models/task';
 
 @Injectable({
@@ -19,12 +19,14 @@ export class TasksService {
   //   return this.http.get<Task[]>(this.configUrl);
   // }
 
-  refreshCollection() {
+  refreshCollection() : void{
     this.http.get<Task[]>(this.configUrl).subscribe((data) => {
+      // side effect to update this.collection$
+      // pas besoin de return
       this.collection$.next(data);
     });
   }
-  
+
   // deuxième écriture
   // refreshCollection(): Observable<Task[]> {
   //   return this.http.get<Task[]>(this.configUrl).pipe(
