@@ -17,7 +17,8 @@ export class PageListTasksComponent {
     //   console.log(data);
     //   this.datas = data;
     // });
-    this.tasksService.refreshCollection()
+    this.tasksService.refreshCollection();
+    
     this.tasksService.collection$.subscribe(data=>{
       console.log(data);
       this.datas = data

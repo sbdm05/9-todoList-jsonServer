@@ -1,6 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subscriber, Subscription, tap } from 'rxjs';
+import {
+  BehaviorSubject,
+  Observable,
+  Subscriber,
+  Subscription,
+  tap,
+} from 'rxjs';
 import { Task } from 'src/app/core/models/task';
 
 @Injectable({
@@ -15,11 +21,12 @@ export class TasksService {
   // observable pour stocker le tableau
   collection$: BehaviorSubject<Task[]> = new BehaviorSubject<Task[]>([]);
 
+  // remplacé par observable collection$
   // getTasks(): Observable<Task[]> {
   //   return this.http.get<Task[]>(this.configUrl);
   // }
 
-  refreshCollection() : void{
+  refreshCollection(): void {
     this.http.get<Task[]>(this.configUrl).subscribe((data) => {
       // side effect to update this.collection$
       // pas besoin de return
